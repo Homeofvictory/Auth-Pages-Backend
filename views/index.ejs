@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset your password</title>
+    <link href="./styles/tailwind.css" rel="stylesheet">
+    <script>
+        var status = '<%- JSON.stringify(status) %>';
+        if(JSON.parse(status) == "verified"){
+            if(confirm("Do you want to login?")){
+                window.location.href = "http://localhost:3000/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div className={styles.login}>
+        <div className='relative top-5 flex flex-row w-full'>
+            <h1><%=  email %></h1>
+    <div>
+    
+          <img className="ml-3 md:mx-14  h-12 w-auto" src='/icon1.png' width={25} height={25} alt="hand"/>
+    </div>
+        
+    
+          <div className={styles.login__sign}>
+            <Link href='/login' >
+    
+            <button type='button' className="btn btn-primary  baseline mr-2.5 w-30 bg-blue-900   float-end">
+        Login →
+    </button>
+            </Link>
+            <p className='float-end text-xs md:text-base no-underline md:mx-4 mx-1.5 mt-2'>
+             <a href='' className='no-underline text-slate-700' >
+             Already have an account?
+              </a> 
+            </p>
+          </div>
+        </div>
+    
+    <div className="flex mt-16 items-center w-screen justify-center px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md ">
+        <div className='mt-6 pt-0'>
+          <h2 className="mt-0 text-center text-xl font-bold tracking-tight text-gray-900">
+            Reset your password</h2>
+          
+        </div>
+        <form id='form' className="mt-8 space-y-6  shadow-2xl bg-[#ffff]" action="#" method="POST">
+    
+          <div className="flex flex-col space-y- m-10  rounded-md ">
+    
+          <div>
+              <label for="password" className="font-semibold mt-4 mb-2">Password</label>
+              <input id="password" name="password" 
+              type="password" 
+               required 
+               className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password"
+                
+                />
+            </div>
+          <div>
+              <label for="password" className="font-semibold mt-4 mb-2">Confirm Password</label>
+              <input id="password" name="confirm-password" type="password" 
+              required 
+              className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password" 
+              
+              />
+            </div>
+    
+            <button type="submit" className="btn btn-primary text-bold mt-8 w-60 md:w-80 bg-blue-900">
+             Set new password
+            </button>
+           
+    
+          
+    
+          <div className="flex flex-row md:inline mt-4 w-[100%] pr-4 md:ml-4 mb-8 justify-between">
+            
+              <p className="md:text-xs text-sm  no-underline ml-4 text-slate-700 inline hover:text-indigo-500">Remember password?</p>
+          
+          
+              <Link href="/login" className="md:text-xs text-sm no-underline md:mx-4 text-blue-800 mr-3 md:font-semibold hover:text-indigo-900">Sign In</Link>
+            
+          </div>
+         
+    
+          </div>
+        </form>
+      </div>
+    </div>
+    
+            </div>
+</body>
+</html>
